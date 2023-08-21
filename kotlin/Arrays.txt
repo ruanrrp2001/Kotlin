@@ -1,0 +1,161 @@
+1)Crie um programa que peça ao usuário para digitar 5 números inteiros e armazene-os em um array. 
+Em seguida, exiba a soma de todos os números no array.
+
+fun main() {
+    // pede ao usuário para digitar 5 números inteiros
+    println("Digite 5 números inteiros:")
+    val numeros = IntArray(5) { readLine()!!.toInt() }
+
+    // calcula a soma dos números no array
+    val soma = numeros.sum()
+
+    // exibe a soma
+    println("A soma dos números é: $soma")
+}
+
+
+2)Crie um programa que peça ao usuário para digitar 10 números inteiros e armazene-os em um array. 
+Em seguida, exiba o maior número no array.
+
+fun main() {
+    // pede ao usuário para digitar 10 números inteiros
+    println("Digite 10 números inteiros:")
+    val numeros = IntArray(10) { readLine()!!.toInt() }
+
+    // encontra o maior número no array
+    val maior = numeros.maxOrNull()
+
+    // exibe o maior número
+    println("O maior número é: $maior")
+}
+
+
+3)Crie um programa que peça ao usuário para digitar 10 números inteiros e armazene-os em um array. 
+Em seguida, exiba o menor número no array.
+
+fun main() {
+    // pede ao usuário para digitar 10 números inteiros
+    println("Digite 10 números inteiros:")
+    val numeros = IntArray(10) { readLine()!!.toInt() }
+
+    // encontra o menor número no array
+    val menor = numeros.minOrNull()
+
+    // exibe o menor número
+    println("O menor número é: $menor")
+}
+
+
+4)Crie um programa que peça ao usuário para digitar 5 nomes e armazene-os em um array. Em seguida, 
+exiba os nomes em ordem alfabética.
+
+fun main() {
+    // pede ao usuário para digitar 5 nomes
+    println("Digite 5 nomes:")
+    val nomes = Array(5) { readLine()!! }
+
+    // ordena os nomes em ordem alfabética
+    nomes.sort()
+
+    // exibe os nomes em ordem alfabética
+    println("Nomes em ordem alfabética:")
+    for (nome in nomes) {
+        println(nome)
+    }
+}
+
+5)Crie um programa que peça ao usuário para digitar 10 números inteiros e armazene-os em um array.
+ Em seguida, exiba os números em ordem crescente.
+
+fun main() {
+    val numeros = IntArray(10)
+    println("Digite 10 números inteiros:")
+    for (i in numeros.indices) {
+        numeros[i] = readLine()!!.toInt()
+    }
+    numeros.sort()
+    println("Os números em ordem crescente são: ${numeros.contentToString()}")
+}
+
+
+6)Crie um programa que peça ao usuário para digitar 10 números inteiros e armazene-os em um array. 
+Em seguida, exiba os números em ordem decrescente.
+
+fun main() {
+    val numeros = IntArray(10)
+
+    // Pedir para o usuário digitar os números e armazenar no array
+    println("Digite 10 números inteiros:")
+    for (i in 0..9) {
+        print("Número ${i+1}: ")
+        numeros[i] = readLine()!!.toInt()
+    }
+
+    // Ordenar o array em ordem decrescente
+    numeros.sortDescending()
+
+    // Exibir o array em ordem decrescente
+    println("Números em ordem decrescente:")
+    for (numero in numeros) {
+        println(numero)
+    }
+}
+
+
+7)Crie um programa que peça ao usuário para digitar 5 palavras e armazene-os em um array. 
+Em seguida, exiba a palavra mais longa no array.
+
+fun main() {
+    val words = Array<String>(5) { "" }
+    for (i in 0..4) {
+        print("Digite a ${i + 1}ª palavra: ")
+        words[i] = readLine()!!.toString()
+    }
+    val longestWord = words.maxByOrNull { it.length }
+    println("A palavra mais longa é: $longestWord")
+}
+
+
+8)Crie um programa que peça ao usuário para digitar 5 palavras e armazene-os em um array. 
+Em seguida, exiba a palavra mais curta no array.
+
+fun main() {
+    val words = Array<String>(5) { "" } // Cria um array vazio de 5 elementos do tipo String
+    for (i in 0 until 5) { // Loop para preencher o array com as palavras digitadas pelo usuário
+        print("Digite a ${i+1}ª palavra: ")
+        words[i] = readLine()!!.trim() // Lê a palavra digitada pelo usuário e armazena no array
+    }
+    val shortestWord = words.minByOrNull { it.length } // Encontra a palavra mais curta no array usando a função minByOrNull()
+    println("A palavra mais curta é: $shortestWord")
+}
+
+
+9)Crie um programa que peça ao usuário para digitar uma frase e armazene cada palavra em um elemento de um array.
+ Em seguida, exiba a frase com as palavras na ordem inversa.
+
+fun main() {
+    print("Digite uma frase: ")
+    val frase = readLine() ?: ""
+    val palavras = frase.split(" ").toTypedArray()
+    val palavrasInvertidas = palavras.reversedArray()
+    val fraseInvertida = palavrasInvertidas.joinToString(separator = " ")
+    println("Frase invertida: $fraseInvertida")
+}
+
+
+10)Crie um programa que peça ao usuário para digitar 10 números inteiros e armazene-os em um array. 
+Em seguida, remova os números duplicados e exiba o array resultante.
+
+fun main() {
+    val numeros = IntArray(10) // Cria um array de 10 elementos
+
+    // Pede ao usuário para digitar 10 números e armazena-os no array
+    for (i in 0 until 10) {
+        print("Digite o ${i+1}º número: ")
+        numeros[i] = readLine()!!.toInt()
+    }
+
+    // Remove os números duplicados e exibe o array resultante
+    val numerosSemDuplicatas = numeros.distinct()
+    println("Números sem duplicatas: ${numerosSemDuplicatas.contentToString()}")
+}

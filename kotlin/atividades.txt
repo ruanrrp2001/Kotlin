@@ -1,0 +1,75 @@
+1)Declare uma variável do tipo Double com o valor 3.14.
+
+fun main(){
+val pi: Double = 3.14
+println("$pi")
+}
+
+
+
+
+
+
+
+
+
+2)Declare uma variável do tipo Boolean com o valor true.
+
+fun main() {
+val Booleano: Boolean = true
+println("$Booleano")
+}
+
+
+
+
+
+
+
+
+3)Declare uma variável do tipo String com o valor "Hello, world!".
+
+fun main(){
+val nome: String = "Hello, World!"
+println("$nome")
+}
+
+
+
+
+
+
+4)Declare uma variável do tipo Int com o valor 10 e uma variável do tipo String com o valor "20"
+
+fun main(){
+val meuInt: Int = 10
+val minhaString: String = "20"
+println("O valor de meuInt é $meuInt")
+println("O valor de minhaString é $minhaString")
+}
+
+
+
+
+
+5)Converta a variável String para um Int e some as duas variáveis Int
+
+fun main(){
+val meuInt: Int = 10
+val minhaString: String = "20"
+val mistura: Int = minhaString.toInt()
+val resultado: Int = meuInt + mistura
+println("A soma de $meuInt e $minhaString é $resultado")
+}
+
+
+
+
+
+6)Declare uma variável do tipo Char com o valor 'a' e uma variável do tipo Int com o valor 1. Some a variável Char com a variável Int.
+fun main(){
+val meuChar: Char = 'a'
+val meuInt: Int = 1
+val resultado: Int = meuChar.toInt() + meuInt
+println("O resultado da soma de '$meuChar' e $meuInt é $resultado")
+}

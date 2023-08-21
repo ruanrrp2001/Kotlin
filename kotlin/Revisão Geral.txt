@@ -1,0 +1,301 @@
+1) Crie um programa que solicita o nome do usuário e armazena em uma variável. Em seguida, exiba uma mensagem de 
+boas-vindas ao usuário usando a variável armazenada
+
+fun main() {
+    // Solicita o nome do usuário e armazena em uma variável
+    print("Digite o seu nome: ")
+    val nome = readLine()
+
+    // Exibe uma mensagem de boas-vindas ao usuário
+    println("Bem-vindo, $nome!")
+}
+
+
+
+
+2)Escreva um programa que recebe um número do usuário e verifica se ele é positivo, negativo ou zero. 
+O programa deve exibir uma mensagem apropriada para cada caso.
+
+fun main() {
+    // Solicita ao usuário que digite um número e armazena na variável "numero"
+    print("Digite um número: ")
+    val numero = readLine()!!.toDouble()
+
+    // Verifica se o número é positivo, negativo ou zero e exibe a mensagem apropriada
+    if (numero > 0) {
+        println("O número é positivo.")
+    } else if (numero < 0) {
+        println("O número é negativo.")
+    } else {
+        println("O número é zero.")
+    }
+}
+
+
+
+3)Crie um programa que imprima os números pares de 0 a 100 usando um loop for
+
+fun main() {
+    // Usa um loop for para imprimir os números pares de 0 a 100
+    for (i in 0..100 step 2) {
+        println(i)
+    }
+}
+
+
+
+
+4)Escreva um programa que cria um array de números inteiros e encontra o maior valor dentro dele.
+
+fun main() {
+    // Cria um array de números inteiros
+    val numeros = arrayOf(2, 8, 3, 5, 10, 1, 7)
+
+    // Encontra o maior valor dentro do array usando a função max()
+    val maiorValor = numeros.max()
+
+    // Exibe o maior valor encontrado na tela
+    println("O maior valor é: $maiorValor")
+}
+
+
+
+5)Crie uma função que recebe uma string como parâmetro e retorna o número de caracteres da string
+
+fun main(){
+val texto = "Olá, mundo!"
+val numeroDeCaracteres = texto.length
+println("A string '$texto' possui $numeroDeCaracteres caracteres.")
+}
+
+ou
+
+
+fun countCharacters(STR: String): Int {
+    return STR.length
+}
+
+fun main() {
+    println("DIGITE UMA FRASE:")
+    val frase = readLine()
+    if (frase != null) {
+        val numCaracteres = countCharacters(frase)
+        println("A frase tem $numCaracteres caracteres")
+    }
+}
+
+
+
+
+6)Crie uma classe Pessoa que tem propriedades como nome, idade e endereço. Crie um objeto Pessoa e exiba suas propriedades
+
+class Pessoa(val nome: String, val idade: Int, val endereco: String)
+fun main() {
+    val pessoa = Pessoa("João", 25, "Rua das Flores, 123")
+    println("Nome: ${pessoa.nome}")
+    println("Idade: ${pessoa.idade}")
+    println("Endereço: ${pessoa.endereco}")
+}
+
+
+
+
+7) Variáveis: Crie um programa que armazena a data de nascimento do usuário em três variáveis (dia, mês e ano).
+ Em seguida, exiba a idade do usuário.
+
+fun main() {
+    val anoNascimento = 1990
+    val mesNascimento = 5
+    val diaNascimento = 10
+
+    val anoAtual = 2023
+    val mesAtual = 4
+    val diaAtual = 19
+
+    val idade = anoAtual - anoNascimento - if (mesAtual < mesNascimento || (mesAtual == mesNascimento && diaAtual < diaNascimento)) 1 else 0
+
+    println("Você tem $idade anos.")
+}
+
+
+
+
+
+
+8)Condicionais: Escreva um programa que recebe a nota de um aluno e verifica se ele passou ou não. 
+O programa deve exibir "Aprovado" se a nota for maior ou igual a 7 e "Reprovado" se a nota for menor que 7.
+
+fun main() {
+    val nota = 8
+
+    if (nota >= 7) {
+        println("Aprovado")
+    } else {
+        println("Reprovado")
+    }
+}
+
+
+
+
+
+
+
+9)Repetições: Crie um programa que imprime a tabuada de multiplicação de 1 a 10 usando um loop for.
+
+fun main() {
+    for (i in 1..10) {
+        println("Tabuada do $i:")
+        for (j in 1..10) {
+            val resultado = i * j
+            println("$i x $j = $resultado")
+        }
+        println() // linha em branco para separar as tabuadas
+    }
+}
+
+
+
+
+
+
+10) Arrays: Escreva um programa que cria um array de strings e exibe a quantidade de elementos no array.
+
+fun main() {
+    val arrayStrings = arrayOf("hello", "world", "kotlin", "programming")
+
+    val tamanhoArray = arrayStrings.size
+
+    println("O array possui $tamanhoArray elementos.")
+}
+
+
+
+
+
+
+
+
+
+11)Funções: Crie uma função que recebe dois números como parâmetros e retorna o resultado da soma desses números.
+
+fun somarNumeros(a: Int, b: Int): Int {
+    return a + b
+}
+fun main() {
+    val resultado = somarNumeros(5, 7)
+    println("O resultado da soma é: $resultado")
+}
+
+
+
+
+
+
+
+12)Classe: Crie uma classe Círculo que tem propriedades como raio e área. Crie um objeto Círculo e exiba sua área.
+
+import kotlin.math.PI
+
+class Circulo(val raio: Double) {
+    val area: Double
+        get() = PI * raio * raio
+}
+
+fun main() {
+    val circulo = Circulo(5.0)
+    println("A área do círculo é: ${circulo.area}")
+}
+
+
+
+
+
+
+
+
+13) Variáveis: Crie um programa que armazena o número de lados de um polígono em uma variável. 
+Em seguida, exiba o nome do polígono de acordo com o número de lados (triângulo para 3 lados, quadrado para 4 lados, etc).
+
+fun main() {
+    val numLados = 4
+    val nomePoligono = when(numLados) {
+        3 -> "triângulo"
+        4 -> "quadrado"
+        5 -> "pentágono"
+        6 -> "hexágono"
+        else -> "polígono com $numLados lados"
+    }
+    println("O polígono com $numLados lados é um $nomePoligono.")
+}
+
+
+
+
+
+
+
+
+
+14) Condicionais: Escreva um programa que recebe a idade do usuário e verifica se ele é menor de idade ou não. 
+O programa deve exibir "Menor de idade" se a idade for menor que 18 e "Maior de idade" se a idade for maior ou igual a 18.
+
+fun main() {
+    val idade = 20
+    
+    if (idade < 18) {
+        println("Menor de idade")
+    } else {
+        println("Maior de idade")
+    }
+}
+
+
+
+
+
+
+
+
+
+15) Repetições: Crie um programa que imprime os números ímpares de 1 a 99 usando um loop while.
+
+fun main() {
+    var numero = 1
+
+    while (numero <= 99) {
+        if (numero % 2 != 0) {
+            println(numero)
+        }
+        numero++
+    }
+}
+
+
+
+
+
+
+
+
+fun countCharacters(STR:String):Int{
+    return STR.length
+
+} 
+
+fun main (){
+  println("digite uma frase:")
+  val frase = readLine()
+  if (frase != null) {
+  val numCaracteres = countCharacters(frase)
+  println("a frase tem $numCaracteres caracteres")
+ }
+}
+
+
+
+
+
+
+
+

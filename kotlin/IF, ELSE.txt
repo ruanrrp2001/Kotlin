@@ -1,0 +1,83 @@
+1)AtividadesEscreva um programa que pede ao usuário para digitar um número e imprima se o número é positivo ou negativo
+fun main() {
+    print("Digite uma letra: ")
+    val letra = readLine()?.lowercase()?.firstOrNull()
+    
+    if (letra != null) {
+        if (letra in "aeiou") {
+            println("A letra $letra é uma vogal.")
+        } else {
+            println("A letra $letra é uma consoante.")
+        }
+}
+}
+
+
+
+
+
+2)Escreva um programa que pede ao usuário para digitar uma letra e imprima se a letra é uma vogal ou consoante
+fun main() {
+    print("Digite uma letra: ")
+    val letra = readLine()?.lowercase()?.firstOrNull()
+    
+    if (letra != null) {
+        if (letra in "aeiou") {
+            println("A letra $letra é uma vogal.")
+        } else {
+            println("A letra $letra é uma consoante.")
+        }
+}
+}
+
+OU
+
+
+
+
+
+
+
+3)Escreva um programa que pede ao usuário para digitar sua idade e imprima se a pessoa é maior ou menor de idade
+
+fun main() {
+    print("Digite sua idade: ")
+    val idade = readLine()?.toIntOrNull() ?: 0
+    
+    if (idade >= 18) {
+        println("Você é maior de idade.")
+    } else {
+        println("Você é menor de idade.")
+    }
+}
+
+
+
+
+
+4)Escreva um programa que pede ao usuário para digitar dois números e imprima o maior dos dois
+
+fun main() {
+    print("Digite o primeiro número: ")
+    val numero1 = readLine()?.toDoubleOrNull() ?: 0.0
+    
+    print("Digite o segundo número: ")
+    val numero2 = readLine()?.toDoubleOrNull() ?: 0.0
+    
+    val maior = if (numero1 > numero2) numero1 else numero2
+    println("O maior número é: $maior")
+}
+
+
+
+
+
+5)Escreva um programa que pede ao usuário para digitar um número e imprima se ele é par ou ímpar.
+
+fun main() {
+    print("Digite um número: ")
+    val numero = readLine()?.toIntOrNull() ?: 0
+    
+    val resultado = if (numero % 2 == 0) "par" else "ímpar"
+    println("O número digitado é $resultado.")
+}

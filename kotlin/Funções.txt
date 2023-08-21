@@ -1,0 +1,369 @@
+1)Crie uma função que recebe um número inteiro e retorna o seu dobro.
+
+
+fun retornarDobro(num: Int): Int {
+    return num * 2
+}
+
+fun main() {
+    val numero = 5
+    val dobro = retornarDobro(numero)
+    println("O dobro de $numero é: $dobro")
+}
+
+
+
+
+
+
+
+2)Crie uma função que recebe um número inteiro e verifica se ele é par ou ímpar, 
+retornando uma mensagem indicando o resultado.
+
+fun verificaParImpar(numero: Int) {
+    if (numero % 2 == 0) {
+        println("$numero é um número par.")
+    } else {
+        println("$numero é um número ímpar.")
+    }
+}
+fun main() {
+    val numero = 5
+    verificaParImpar(numero)
+}
+
+
+
+
+
+
+
+
+3)Crie uma função que recebe dois números inteiros e retorna o maior deles
+
+fun retornarMaiorNumero(num1: Int, num2: Int): Int {
+    return if (num1 > num2) num1 else num2
+}
+
+fun main() {
+    val numero1 = 10
+    val numero2 = 20
+    val maiorNumero = retornarMaiorNumero(numero1, numero2)
+    println("Entre $numero1 e $numero2, o maior número é: $maiorNumero")
+}
+
+
+
+
+
+
+4)Crie uma função que recebe uma lista de números inteiros e retorna a média aritmética dos valores.
+
+fun calcularMedia(numeros: List<Int>): Double {
+    val soma = numeros.sum()
+    val quantidade = numeros.size
+    val media = soma.toDouble() / quantidade
+    return media
+}
+
+fun main() {
+    val numeros = listOf(1, 2, 3, 4, 5)
+    val media = calcularMedia(numeros)
+    println("A média dos números ${numeros} é: ${media}")
+}
+
+ou
+
+fun main() {
+    print("Digite um número inteiro:")
+    val numero = readLine()?.toIntOrNull()
+    if (numero != null) {
+        verificaParImpar(numero)
+    } else {
+        println("Valor inválido. Digite um número inteiro válido!")
+    }
+}
+
+fun verificaParImpar(numero: Int) {
+    if (numero % 2 == 0) {
+        println("$numero é um número par.")
+    } else {
+        println("$numero é um número ímpar.")
+    }
+}
+
+
+5)Crie uma função que recebe um número inteiro e retorna a sua tabuada, de 1 a 10
+
+fun calcularTabuada(numero: Int) {
+    println("Tabuada de $numero:")
+    for (i in 1..10) {
+        val resultado = numero * i
+        println("$numero x $i = $resultado")
+    }
+}
+fun main(){
+val numero = 10
+calcularTabuada(numero)
+}
+
+
+
+6)Crie uma função que recebe um número inteiro e verifica se ele é primo, retornando uma mensagem indicando o resultado.
+
+fun verificarPrimo(numero: Int): String {
+    if (numero <= 1) {
+        return "$numero não é um número primo."
+    }
+    for (i in 2 until numero) {
+        if (numero % i == 0) {
+            return "$numero não é um número primo."
+        }
+    }
+    return "$numero é um número primo."
+}
+fun main() {
+    val numero = 17
+    val resultado = verificarPrimo(numero)
+    println(resultado)
+}
+
+
+
+7)Crie uma função que recebe uma lista de strings e retorna a quantidade de elementos que contêm mais de 5 caracteres.
+
+fun main() {
+    println("Digite a quantidade de nomes a serem listados: ")
+    val quantidade = readLine()?.toIntOrNull() ?: 0
+
+    val nomes = Array<String?>(quantidade) { null }
+
+    for (i in 0 until quantidade) {
+        println("Digite o ${i + 1}º nome: ")
+        nomes[i] = readLine()
+    }
+
+    val quantidadeNomesMaioresQueCinco = contarNomesMaioresQueCinco(nomes)
+
+    if (quantidadeNomesMaioresQueCinco != null) {
+        println("A quantidade de nomes com mais de 5 caracteres é: $quantidadeNomesMaioresQueCinco")
+    } else {
+        println("Nenhum nome válido foi digitado.")
+    }
+}
+
+fun contarNomesMaioresQueCinco(nomes: Array<String?>): Int? {
+    val nomesValidos = nomes.filterNotNull()
+    return if (nomesValidos.isNotEmpty()) {
+        nomesValidos.count { it.length > 5 }
+    } else {
+        null
+    }
+
+}
+
+
+
+8)Crie uma função que recebe uma lista de números inteiros e retorna a soma dos valores pares.
+
+fun main() {
+    println("Digite a quantidade de números a serem digitados: ")
+    val quantidade = readLine()?.toIntOrNull() ?: 1
+
+    val numeros = Array<Int?>(quantidade) { null }
+
+    for (i in 0 until quantidade) {
+        println("Digite o ${i + 1}º número: ")
+        numeros[i] = readLine()?.toIntOrNull()
+    }
+
+    val somaPares = calcularSomaPares(numeros)
+
+    if (somaPares != null) {
+        println("A soma dos números pares é: $somaPares")
+    } else {
+        println("Nenhum número válido foi digitado.")
+    }
+}
+
+fun calcularSomaPares(numeros: Array<Int?>): Int? {
+    val numerosValidos = numeros.filterNotNull()
+    return if (numerosValidos.isNotEmpty()) {
+        numerosValidos.filter { it % 2 == 0 }.sum()
+    } else {
+        null
+    }
+}
+
+
+
+
+9) Crie uma função que recebe uma lista de números inteiros e retorna uma nova lista com os valores em ordem crescente
+
+fun main() {
+    println("Digite a quantidade de números a serem digitados: ")
+    val quantidade = readLine()?.toIntOrNull() ?: 1
+
+    val numeros = IntArray(quantidade)
+
+    for (i in 0 until quantidade) {
+        println("Digite o ${i + 1}º número: ")
+        numeros[i] = readLine()?.toIntOrNull() ?: 0
+    }
+
+    val numerosOrdenados = ordenarNumerosCrescente(numeros)
+
+    println("Os números em ordem crescente são: ${numerosOrdenados.joinToString(", ")}")
+}
+
+fun ordenarNumerosCrescente(numeros: IntArray): IntArray {
+    return numeros.sorted().toIntArray()
+}
+
+
+
+10)Crie uma função que recebe uma lista de números inteiros e retorna o segundo maior valor.
+
+
+fun main() {
+    println("Digite a quantidade de números a serem digitados: ")
+    val quantidade = readLine()?.toIntOrNull() ?: 1
+
+    val numeros = IntArray(quantidade)
+
+    for (i in 0 until quantidade) {
+        println("Digite o ${i + 1}º número: ")
+        numeros[i] = readLine()?.toIntOrNull() ?: 0
+    }
+
+    val numerosOrdenados = ordenarNumerosCrescente(numeros)
+
+    println("Os números em ordem crescente são: ${numerosOrdenados.joinToString(", ")}")
+
+    val segundoMaiorNumero = encontrarSegundoMaiorNumero(numerosOrdenados)
+
+    if (segundoMaiorNumero != null) {
+        println("O segundo maior número é: $segundoMaiorNumero")
+    } else {
+        println("Não foi possível encontrar o segundo maior número.")
+    }
+}
+
+fun ordenarNumerosCrescente(numeros: IntArray): IntArray {
+    return numeros.sorted().toIntArray()
+}
+
+fun encontrarSegundoMaiorNumero(numeros: IntArray): Int? {
+    if (numeros.size < 2) {
+        return null
+    } else {
+        return numeros[numeros.size - 2]
+    }
+}
+
+
+
+11)Crie uma função que recebe uma lista de números inteiros e verifica se todos eles são positivos, retornando uma mensagem indicando o resultado.
+
+fun verificarTodosPositivos(numeros: List<Int>): Boolean {
+    return numeros.all { it > 0 }
+}
+
+fun main() {
+    println("Digite a quantidade de números a serem digitados: ")
+    val quantidade = readLine()?.toIntOrNull() ?: 1
+
+    val numeros = mutableListOf<Int>()
+
+    for (i in 0 until quantidade) {
+        println("Digite o ${i + 1}º número: ")
+        val numero = readLine()?.toIntOrNull() ?: 0
+        numeros.add(numero)
+    }
+
+    val saoPositivos = verificarTodosPositivos(numeros)
+
+    if (saoPositivos) {
+        println("Todos os números são positivos.")
+    } else {
+        println("Nem todos os números são positivos.")
+    }
+}
+
+
+12)Crie uma função que recebe uma lista de strings e retorna uma nova lista com as strings em ordem alfabética.
+
+fun main() {
+    println("Digite a quantidade de nomes a serem digitados: ")
+    val quantidade = readLine()?.toIntOrNull() ?: 1
+
+    val nomes = Array<String?>(quantidade) { null }
+
+    for (i in 0 until quantidade) {
+        println("Digite o ${i + 1}º nome: ")
+        nomes[i] = readLine()
+    }
+
+    nomes.sort()
+
+    println("A lista em ordem alfabética é: ${nomes.joinToString(", ")}")
+}
+
+
+
+13 Crie uma função que recebe um número inteiro e retorna a sua raiz quadrada.
+
+import kotlin.math.sqrt
+
+fun calcularRaizQuadrada(numero: Int): Double {
+    return sqrt(numero.toDouble())
+}
+
+fun main() {
+    println("Digite um número inteiro: ")
+    val numero = readLine()?.toIntOrNull() ?: 0
+
+    val raizQuadrada = calcularRaizQuadrada(numero)
+
+    println("A raiz quadrada de $numero é: $raizQuadrada")
+}
+
+
+
+14 Crie uma função que recebe uma lista de números inteiros e retorna uma nova lista com os valores multiplicados por 2.
+
+fun calcularDobro(numeros: List<Int>): List<Int> {
+    return numeros.map { it * 2 }
+}
+
+fun main() {
+    println("Digite a quantidade de números a serem digitados: ")
+    val quantidade = readLine()?.toIntOrNull() ?: 1
+
+    val numeros = mutableListOf<Int>()
+
+    for (i in 0 until quantidade) {
+        println("Digite o ${i + 1}º número: ")
+        val numero = readLine()?.toIntOrNull() ?: 0
+        numeros.add(numero)
+    }
+
+    val numerosDobrados = calcularDobro(numeros)
+
+    println("O dobro de cada componente da lista é: ${numerosDobrados.joinToString(", ")}")
+}
+
+15 Crie uma função que recebe um número inteiro e retorna a sua representação em binário.
+
+fun calcularBinario(numero: Int): String {
+    return Integer.toBinaryString(numero)
+}
+
+fun main() {
+    println("Digite um número inteiro: ")
+    val numero = readLine()?.toIntOrNull() ?: 0
+
+    val binario = calcularBinario(numero)
+
+    println("O binário de $numero é: $binario")
+}

@@ -1,0 +1,173 @@
+https://www.jdoodle.com/compile-kotlin-online/
+
+
+1)Crie um programa que pede ao usuário para digitar dois números e imprime qual número é maior.
+fun main() {
+    print("Digite o primeiro número: ")
+    val numero1 = readLine()!!.toDouble()
+
+    print("Digite o segundo número: ")
+    val numero2 = readLine()!!.toDouble()
+
+    if (numero1 > numero2) {
+        println("O primeiro número é maior.")
+    } else if (numero2 > numero1) {
+        println("O segundo número é maior.")
+    } else {
+        println("Os dois números são iguais.")
+    }
+}
+
+
+2)Crie um programa que pede ao usuário para digitar um número e imprime se ele é positivo, negativo ou zero.
+fun main() {
+    print("Digite um número: ")
+    val numero = readLine()!!.toDouble()
+
+    if (numero > 0) {
+        println("O número é positivo")
+    } else if (numero < 0) {
+        println("O número é negativo")
+    } else {
+        println("O número é zero")
+    }
+}
+
+3)Crie um programa que pede ao usuário para digitar o seu nome e idade. Se a idade for menor que 18, o programa deve
+
+fun main() {
+    print("Digite o seu nome: ")
+    val nome = readLine()
+
+    print("Digite a sua idade: ")
+    val idade = readLine()?.toInt()
+
+    if (idade != null && idade < 18) {
+        println("Olá, $nome! Você é menor de idade.")
+    } else {
+        println("Olá, $nome! Você é maior de idade.")
+    }
+}
+
+
+4)Crie um programa que pede ao usuário para digitar a sua idade e se é estudante. 
+Se a idade for menor que 18 e não for estudante, o programa deve imprimir "Você é menor de idade e não é estudante", 
+caso contrário, deve imprimir "Você é maior de idade ou é estudante".
+
+fun main() {
+    print("Digite a sua idade: ")
+    val idade = readLine()?.toInt()
+
+    print("Você é estudante (s/n)? ")
+    val estudante = readLine()
+
+    if (idade != null && idade < 18 && estudante?.lowercase() != "s") {
+        println("Você é menor de idade e não é estudante.")
+    } else {
+        println("Você é maior de idade ou é estudante.")
+    }
+}
+
+
+5)Crie um programa que pede ao usuário para digitar o seu salário e imprime o valor com um desconto de 10%
+
+fun main() {
+    print("Digite o seu salário: ")
+    val salario = readLine()?.toDouble()
+
+    if (salario != null) {
+        val desconto = salario * 0.1
+        val salarioComDesconto = salario - desconto
+        println("O seu salário com desconto de 10% é: R$ $salarioComDesconto")
+    } else {
+        println("Salário inválido.")
+    }
+}
+
+6)Crie um programa que pede ao usuário para digitar três números e imprime o maior deles.
+
+fun main() {
+    print("Digite o primeiro número: ")
+    val numero1 = readLine()?.toDouble()
+
+    print("Digite o segundo número: ")
+    val numero2 = readLine()?.toDouble()
+
+    print("Digite o terceiro número: ")
+    val numero3 = readLine()?.toDouble()
+
+    if (numero1 != null && numero2 != null && numero3 != null) {
+        val maior = if (numero1 > numero2 && numero1 > numero3) {
+            numero1
+        } else if (numero2 > numero1 && numero2 > numero3) {
+            numero2
+        } else {
+            numero3
+        }
+
+        println("O maior número é: $maior")
+    } else {
+        println("Valores inválidos.")
+    }
+}
+
+
+7)Crie um programa que pede ao usuário para digitar um número e imprime se ele é par ou ímpar
+
+fun main() {
+    print("Digite um número: ")
+    val numero = readLine()?.toInt()
+
+    if (numero != null) {
+        if (numero % 2 == 0) {
+            println("O número é par.")
+        } else {
+            println("O número é ímpar.")
+        }
+    } else {
+        println("Número inválido.")
+    }
+}
+
+
+8)Crie um programa que pede ao usuário para digitar a temperatura em Celsius e imprime a temperatura em Fahrenheit
+ (fórmula: (C * 9/5) + 32).Crie um programa que pede ao usuário para digitar uma letra e imprime se é uma vogal ou uma 
+consoante.
+
+fun main() {
+    print("Digite a temperatura em Celsius: ")
+    val temperaturaCelsius = readLine()?.toDouble()
+
+    if (temperaturaCelsius != null) {
+        val temperaturaFahrenheit = (temperaturaCelsius * 9/5) + 32
+        println("A temperatura em Fahrenheit é: $temperaturaFahrenheit")
+    } else {
+        println("Temperatura inválida.")
+    }
+}
+
+
+9)Crie um programa que pede ao usuário para digitar o seu peso e altura e calcula o seu índice de massa corporal 
+(IMC) (fórmula: peso / altura²). Em seguida, o programa deve imprimir se o usuário está abaixo do peso, no peso normal,
+ com sobrepeso, obeso ou muito obeso.
+
+fun main() {
+    // pede ao usuário para digitar o peso e altura
+    print("Digite o seu peso em kg: ")
+    val peso = readLine()!!.toFloat()
+
+    print("Digite a sua altura em metros: ")
+    val altura = readLine()!!.toFloat()
+
+    // calcula o IMC
+    val imc = peso / (altura * altura)
+
+    // imprime a classificação do IMC
+    when {
+        imc < 18.5 -> println("Você está abaixo do peso.")
+        imc < 25 -> println("Seu peso está normal.")
+        imc < 30 -> println("Você está com sobrepeso.")
+        imc < 35 -> println("Você está obeso.")
+        else -> println("Você está muito obeso.")
+    }
+}
